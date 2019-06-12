@@ -6,7 +6,7 @@ import Header from '../layout/Header';
 const uuidv4 = require('uuid/v4');
 const axios = require('axios');
 
-const urlTodos = 'https://jsonplaceholder.typicode.com/todos/';
+const urlTodos = 'https://jsonplaceholder.typicode.com/todos';
 
 class App extends React.Component {
   constructor(props) {
@@ -47,14 +47,23 @@ class App extends React.Component {
   }
 
   addTodo = (title) => {
-    const todo = {
-      id: uuidv4(),
-      title: title,
-      completed: false
-    };
-    this.setState(state => ({
-      todos: [...state.todos, todo]
-    }));
+    axios.post(`${urlTodos}`, {title: title})
+      .then(response => {
+        const todo = {
+          // JSONPlaceholder API always returns the same id
+          // Generate the id here so that react doesn't complain
+          id: uuidv4(),
+          title: response.data.title,
+          completed: false
+        };
+        this.setState(state => ({
+          todos: [...state.todos, todo]
+        }));
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    
   } 
 
   toggleCompleted = (id) => {
