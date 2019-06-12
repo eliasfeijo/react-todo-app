@@ -75,6 +75,17 @@ class App extends React.Component {
         return todo;
       })
     }));
+    // Simulate Put request
+    axios.put(`${urlTodos}/${id}`, {
+      id: id,
+      title: this.state.todos.find(todo => todo.id === id).title
+    })
+    .then(response => {
+      console.log("Updated Todo: " + response.data.title);
+    })
+    .catch(error => {
+      console.log(error);
+    });
   }
 
   deleteTodo = (id) => {
