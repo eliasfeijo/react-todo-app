@@ -21,9 +21,12 @@
 }
 
 header{
+  text-align: center;
   & > h1 {
-    text-align: center;
     padding: 10px;
+  }
+  & > p {
+    margin-bottom: 10px;
   }
 }
 
