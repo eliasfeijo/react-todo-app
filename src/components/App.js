@@ -5,7 +5,7 @@ import Header from '../layout/Header';
 import uuid from 'uuid';
 import axios from 'axios';
 import AddTodo from './AddTodo/AddTodo';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {HashRouter as Router, Route} from 'react-router-dom';
 import About from '../pages/About';
 
 const urlTodos = 'https://jsonplaceholder.typicode.com/todos';
