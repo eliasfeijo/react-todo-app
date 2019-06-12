@@ -1,12 +1,15 @@
 import React from 'react';
+import TodoItem from '../TodoItem/TodoItem'
 
 class TodoList extends React.Component {
   render() {
-    return (
-      <div>
-        todo list
-      </div>
-    );
+    return this.props.todos.map((todo) =>
+      <TodoItem 
+        key={todo.id} 
+        item={todo} 
+        deleteTodo={this.props.deleteTodo}
+        toggleCompleted={this.props.toggleCompleted}
+      />);
   }
 }
 
