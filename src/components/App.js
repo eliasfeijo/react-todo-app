@@ -3,6 +3,8 @@ import './App.scss';
 import TodoList from './TodoList/TodoList';
 import Header from '../layout/Header';
 
+const uuidv4 = require('uuid/v4');
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -28,7 +30,7 @@ class App extends React.Component {
 
   addTodo = (title) => {
     const todo = {
-      id: 4,
+      id: uuidv4(),
       title: title,
       completed: false
     };
@@ -59,17 +61,17 @@ class App extends React.Component {
 
 const todoList = [
   {
-    id: 1,
+    id: uuidv4(),
     title: "Work",
     completed: false
   },
   {
-    id: 2,
+    id: uuidv4(),
     title: "Take bath",
     completed: true
   },
   {
-    id: 3,
+    id: uuidv4(),
     title: "Sleep",
     completed: false
   }
