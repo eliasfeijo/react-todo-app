@@ -75,8 +75,8 @@ class App extends React.Component {
         return todo;
       })
     }));
-    // Simulate Put request
-    axios.put(`${urlTodos}/${id}`, {
+    // Hard-coded id because JSONPlaceholder doesn't accept uuid v4 id format
+    axios.put(`${urlTodos}/13`, {
       id: id,
       title: this.state.todos.find(todo => todo.id === id).title
     })
