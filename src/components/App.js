@@ -2,9 +2,8 @@ import React from 'react';
 import './App.scss';
 import TodoList from './TodoList/TodoList';
 import Header from '../layout/Header';
-
-const uuidv4 = require('uuid/v4');
-const axios = require('axios');
+import uuid from 'uuid';
+import axios from 'axios';
 
 const urlTodos = 'https://jsonplaceholder.typicode.com/todos';
 
@@ -52,7 +51,7 @@ class App extends React.Component {
         const todo = {
           // JSONPlaceholder API always returns the same id
           // Generate the id here so that react doesn't complain
-          id: uuidv4(),
+          id: uuid.v4(),
           title: response.data.title,
           completed: false
         };
