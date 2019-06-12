@@ -1,9 +1,10 @@
 import React from 'react';
+import './About.scss';
 
 function About () {
   return (
     <React.Fragment>
-      <div className="about">
+      <main className="about">
         <p>Stack used to make this app:</p>
         <ul>
           <li>
@@ -23,17 +24,13 @@ function About () {
           </li>
         </ul>
         <p>
-          Many thanks to
-          <a href="https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA" target="_blank">
+          Many thanks to <a href="https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA" target="_blank">
             Traversy Media
-          </a>
-          for this
-          <a href="https://www.youtube.com/watch?v=sBws8MSXN7A" target="_blank">
+          </a> for this <a href="https://www.youtube.com/watch?v=sBws8MSXN7A" target="_blank">
             tutorial
-          </a>
-          on React.
+          </a> on React.
         </p>
-      </div>
+      </main>
     </React.Fragment>
   );
 }

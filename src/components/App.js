@@ -5,6 +5,8 @@ import Header from '../layout/Header';
 import uuid from 'uuid';
 import axios from 'axios';
 import AddTodo from './AddTodo/AddTodo';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import About from '../pages/About';
 
 const urlTodos = 'https://jsonplaceholder.typicode.com/todos';
 
@@ -30,20 +32,27 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <Router>
+        <div className="App">
         <Header onSubmit={this.addTodo} />
         <AddTodo onSubmit={this.props.onSubmit} />
-        <main>
-          <TodoList 
-            todos={this.state.todos} 
-            deleteTodo={this.deleteTodo} 
-            toggleCompleted={this.toggleCompleted}
-          />
-        </main>
+        <Route exact path="/" render={props => (
+          <React.Fragment>
+            <main>
+              <TodoList 
+                todos={this.state.todos} 
+                deleteTodo={this.deleteTodo} 
+                toggleCompleted={this.toggleCompleted}
+              />
+            </main>
+          </React.Fragment>
+        )} />
+        <Route path="/about" component={About} />
         <footer>
           <em>2019 - Made by Elias Feijó</em>
         </footer>
       </div>
+      </Router>
     );
   }
 
