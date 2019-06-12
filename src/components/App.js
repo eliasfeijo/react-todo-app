@@ -32,12 +32,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <Router>
+      <Router basename="/">
         <div className="App">
         <Header />
-        <AddTodo onSubmit={this.addTodo} />
         <Route exact path="/" render={props => (
           <React.Fragment>
+            <AddTodo onSubmit={this.addTodo} />
             <main>
               <TodoList 
                 todos={this.state.todos} 
