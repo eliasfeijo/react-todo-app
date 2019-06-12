@@ -14,7 +14,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header onSubmit={this.addTodo} />
         <main>
           <TodoList 
             todos={this.state.todos} 
@@ -26,9 +26,20 @@ class App extends React.Component {
     );
   }
 
+  addTodo = (title) => {
+    const todo = {
+      id: 4,
+      title: title,
+      completed: false
+    };
+    this.setState(state => ({
+      todos: [...state.todos, todo]
+    }));
+  } 
+
   toggleCompleted = (id) => {
     this.setState(state => ({
-      todos: this.state.todos.map(todo => {
+      todos: state.todos.map(todo => {
         if(todo.id === id) {
           todo.completed = !todo.completed;
         }
