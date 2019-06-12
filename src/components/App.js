@@ -34,8 +34,8 @@ class App extends React.Component {
     return (
       <Router>
         <div className="App">
-        <Header onSubmit={this.addTodo} />
-        <AddTodo onSubmit={this.props.onSubmit} />
+        <Header />
+        <AddTodo onSubmit={this.addTodo} />
         <Route exact path="/" render={props => (
           <React.Fragment>
             <main>
