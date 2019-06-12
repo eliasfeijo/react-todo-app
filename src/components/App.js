@@ -92,6 +92,13 @@ class App extends React.Component {
     this.setState({
       todos: [...this.state.todos.filter((t) => id !== t.id)]
     });
+    axios.delete(`${urlTodos}/${id}`)
+    .then(response => {
+      console.log("Deleted Todo with id: " + id);
+    })
+    .catch(error => {
+      console.log(error);
+    });
   }
 
 }
