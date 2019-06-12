@@ -1,5 +1,20 @@
-h1 {
-  text-align: center;
+.App {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & > * {
+    width: 100%;
+  }
+}
+
+header{
+  & > h1 {
+    text-align: center;
+    padding: 10px;
+  }
 }
 
 main {
@@ -7,4 +22,12 @@ main {
   flex-direction: column;
   margin: 10px;
   background-color: darken(beige, 5%);
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+footer {
+  text-align: center;
+  margin-bottom: 10px;
+  color: lighten(gray, 20%);
 }

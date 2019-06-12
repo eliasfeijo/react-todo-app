@@ -24,6 +24,9 @@ class App extends React.Component {
             toggleCompleted={this.toggleCompleted}
           />
         </main>
+        <footer>
+          <em>2019 - Made by Elias Feijó</em>
+        </footer>
       </div>
     );
   }
