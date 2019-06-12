@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.scss';
 import TodoList from './TodoList/TodoList';
+import Header from '../layout/Header';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,9 +14,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <header>
-          <h1>Todo List</h1>
-        </header>
+        <Header />
         <main>
           <TodoList 
             todos={this.state.todos} 
