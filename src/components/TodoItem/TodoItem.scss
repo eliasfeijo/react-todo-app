@@ -1,10 +1,14 @@
 .todo-item {
   display: flex;
   align-items: center;
+  padding: 0 10px;
+
+  border: 1px dotted darken(beige, 15%);
 
   & > p {
     flex-grow: 10;
     word-break: break-all;
+    margin: 10px 5px;
   }
 
   & > button {
