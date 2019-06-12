@@ -1,12 +1,13 @@
 .add-todo {
   display: flex;
-  padding: 10px;
 
   & > input[type=text] {
     flex-grow: 10;
+    margin-left: 10px;
   }
 
   & > input[type=submit] {
     flex-grow: 2;
+    margin-right: 10px;
   }
 }

@@ -4,6 +4,7 @@ import TodoList from './TodoList/TodoList';
 import Header from '../layout/Header';
 import uuid from 'uuid';
 import axios from 'axios';
+import AddTodo from './AddTodo/AddTodo';
 
 const urlTodos = 'https://jsonplaceholder.typicode.com/todos';
 
@@ -31,6 +32,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header onSubmit={this.addTodo} />
+        <AddTodo onSubmit={this.props.onSubmit} />
         <main>
           <TodoList 
             todos={this.state.todos} 

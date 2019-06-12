@@ -1,5 +1,6 @@
 import React from 'react';
 import './AddTodo.scss';
+
 class AddTodo extends React.Component {
   constructor (props) {
     super(props);
