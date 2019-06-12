@@ -4,13 +4,28 @@ import TodoList from './TodoList/TodoList';
 import Header from '../layout/Header';
 
 const uuidv4 = require('uuid/v4');
+const axios = require('axios');
+
+const urlTodos = 'https://jsonplaceholder.typicode.com/todos/';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      todos: todoList
+      todos: []
     };
+  }
+
+  componentDidMount() {
+    axios.get(`${urlTodos}?_limit=5`)
+      .then(response => {
+        this.setState({
+          todos: response.data
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 
   render() {
@@ -57,27 +72,8 @@ class App extends React.Component {
     this.setState({
       todos: [...this.state.todos.filter((t) => id !== t.id)]
     });
-    console.log(this.state.todos);
   }
 
 }
-
-const todoList = [
-  {
-    id: uuidv4(),
-    title: "Work",
-    completed: false
-  },
-  {
-    id: uuidv4(),
-    title: "Take bath",
-    completed: true
-  },
-  {
-    id: uuidv4(),
-    title: "Sleep",
-    completed: false
-  }
-];
 
 export default App;
